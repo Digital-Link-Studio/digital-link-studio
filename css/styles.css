@@ -496,12 +496,13 @@ a {
   list-style: none;
 }
 
-/* Logo files have large white margins, so size them by height
-   and blend the white away on any background */
+/* Logos come in very different shapes, so cap both height and width
+   to keep them visually balanced. Multiply blends the white backgrounds away. */
 .logo-bar__list img {
   width: auto;
-  height: 72px;
-  object-fit: contain;
+  height: auto;
+  max-height: 52px;
+  max-width: 170px;
   mix-blend-mode: multiply;
 }
 
@@ -550,6 +551,7 @@ a {
   }
 
   .logo-bar__list img {
-    height: 56px;
+    max-height: 40px;
+    max-width: 130px;
   }
 }
