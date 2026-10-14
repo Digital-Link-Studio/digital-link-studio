@@ -10,6 +10,8 @@
    8. Shared section layout
    9. The challenge
    10. Statement
+   11. The process
+   12. Proof in numbers
    ========================================================================== */
 
 /* 1. Design tokens
@@ -671,4 +673,151 @@ a {
   line-height: 1.6;
   color: var(--color-ink-soft);
   text-wrap: pretty;
+}
+
+/* 11. The process
+   ========================================================================== */
+.steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--color-line);
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 96px 1fr 300px;
+  gap: 16px 40px;
+  align-items: start;
+  padding: clamp(28px, 3.5vw, 44px) 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.step__number {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  line-height: 1;
+  font-variant-numeric: lining-nums;
+  color: var(--color-copper);
+}
+
+.step__title {
+  margin: 0 0 12px;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(1.375rem, 2vw, 1.75rem);
+  line-height: 1.25;
+}
+
+.step__text {
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-ink-soft);
+}
+
+.step__output {
+  margin: 0;
+  padding: 20px 22px;
+  font-size: 1rem;
+  line-height: 1.5;
+  background: var(--color-cream);
+  border-radius: 14px;
+}
+
+.step__output strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-copper);
+}
+
+@media (max-width: 960px) {
+  .step {
+    grid-template-columns: 64px 1fr;
+  }
+
+  .step__output {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 560px) {
+  .step {
+    grid-template-columns: 1fr;
+  }
+
+  .step__output {
+    grid-column: auto;
+  }
+}
+
+/* 12. Proof in numbers
+   ========================================================================== */
+.proof-stats {
+  background: var(--color-ink);
+  color: var(--color-cream);
+}
+
+/* Peach on the dark band passes contrast at 8:1 */
+.proof-stats__label {
+  color: var(--color-peach);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(32px, 4vw, 56px);
+  margin: 32px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  padding-top: 28px;
+  border-top: 1px solid rgba(246, 241, 236, 0.2);
+}
+
+.stat__number {
+  margin: 0 0 8px;
+  font-family: var(--font-serif);
+  font-size: clamp(2.75rem, 5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-variant-numeric: lining-nums;
+  color: var(--color-peach);
+}
+
+.stat__title {
+  margin: 0 0 14px;
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.stat__text {
+  flex: 1;
+  margin: 0 0 20px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(246, 241, 236, 0.82);
+}
+
+.stat__client {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 860px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
 }
