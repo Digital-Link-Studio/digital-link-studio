@@ -7,6 +7,9 @@
    5. Header and navigation
    6. Hero
    7. Client logo bar
+   8. Shared section layout
+   9. The challenge
+   10. Statement
    ========================================================================== */
 
 /* 1. Design tokens
@@ -32,6 +35,8 @@
   --page-gutter: clamp(16px, 3.5vw, 70px);
   --header-height: 96px;
   --radius-card: 20px;
+  --content-width: 1200px;
+  --section-space: clamp(64px, 9vw, 120px);
   --radius-pill: 999px;
 }
 
@@ -497,13 +502,13 @@ a {
 }
 
 /* Logos come in very different shapes, so cap both height and width
-   to keep them visually balanced. Multiply blends the white backgrounds away. */
+   to keep them visually balanced. The files are prerecolored to one warm
+   gray (#6B5F55) on a transparent background. */
 .logo-bar__list img {
   width: auto;
   height: auto;
   max-height: 52px;
   max-width: 170px;
-  mix-blend-mode: multiply;
 }
 
 @keyframes logo-scroll {
@@ -554,4 +559,116 @@ a {
     max-height: 40px;
     max-width: 130px;
   }
+}
+
+/* 8. Shared section layout
+   ========================================================================== */
+.section {
+  padding: var(--section-space) var(--page-gutter);
+}
+
+.container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.container--narrow {
+  max-width: 860px;
+}
+
+.section-header {
+  max-width: 760px;
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+
+.section-label {
+  margin: 0 0 16px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-copper);
+}
+
+.section-title {
+  margin: 0 0 20px;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.section-intro {
+  margin: 0;
+  font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+  color: var(--color-ink-soft);
+  text-wrap: pretty;
+}
+
+/* 9. The challenge
+   ========================================================================== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 2.5vw, 32px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  padding: clamp(28px, 3vw, 40px);
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+  box-shadow: 0 1px 2px rgba(43, 35, 28, 0.04), 0 12px 32px rgba(43, 35, 28, 0.06);
+}
+
+.card__title {
+  margin: 0 0 12px;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(1.375rem, 2vw, 1.625rem);
+  line-height: 1.25;
+}
+
+.card__text {
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-ink-soft);
+}
+
+@media (max-width: 760px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 10. Statement
+   ========================================================================== */
+.statement {
+  text-align: center;
+  background: var(--color-cream);
+}
+
+.statement__title {
+  margin: 0 0 24px;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(1.75rem, 3.4vw, 2.75rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.statement__text {
+  margin: 0 auto;
+  max-width: 720px;
+  font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--color-ink-soft);
+  text-wrap: pretty;
 }
