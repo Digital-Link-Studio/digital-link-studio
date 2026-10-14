@@ -12,6 +12,7 @@
    10. Statement
    11. The process
    12. Proof in numbers
+   13. Testimonials
    ========================================================================== */
 
 /* 1. Design tokens
@@ -818,6 +819,102 @@ a {
 
 @media (max-width: 860px) {
   .stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 13. Testimonials
+   ========================================================================== */
+.testimonials .section-label {
+  margin-bottom: clamp(28px, 4vw, 48px);
+}
+
+.quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 28px;
+  margin: 0;
+  padding: clamp(28px, 3vw, 40px);
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+}
+
+.quote__text {
+  margin: 0;
+}
+
+.quote__text p {
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--color-ink-soft);
+}
+
+.quote__text p::before {
+  content: "\201C";
+}
+
+.quote__text p::after {
+  content: "\201D";
+}
+
+.quote__author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.quote__photo {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.quote__name {
+  display: block;
+  font-weight: 600;
+}
+
+.quote__role {
+  display: block;
+  font-size: 0.9375rem;
+  color: var(--color-ink-soft);
+}
+
+/* The client quote leads, larger and on cream */
+.quote--featured {
+  margin-bottom: clamp(20px, 2.5vw, 32px);
+  padding: clamp(32px, 5vw, 64px);
+  background: var(--color-cream);
+  border: 0;
+}
+
+.quote--featured .quote__text p {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 2.6vw, 2.125rem);
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+  text-wrap: pretty;
+}
+
+.quote--featured .quote__photo {
+  width: 72px;
+  height: 72px;
+}
+
+.quote-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 2.5vw, 32px);
+}
+
+@media (max-width: 760px) {
+  .quote-grid {
     grid-template-columns: 1fr;
   }
 }
