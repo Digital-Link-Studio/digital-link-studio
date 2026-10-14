@@ -6,6 +6,7 @@
    4. Buttons
    5. Header and navigation
    6. Hero
+   7. Client logo bar
    ========================================================================== */
 
 /* 1. Design tokens
@@ -439,5 +440,116 @@ a {
     flex-direction: column;
     align-items: center;
     gap: 16px;
+  }
+}
+
+/* 7. Client logo bar
+   ========================================================================== */
+.logo-bar {
+  padding: 0 var(--page-gutter);
+}
+
+.logo-bar__inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.logo-bar__label {
+  flex-shrink: 0;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+}
+
+.logo-bar__viewport {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  /* Fade the logos in and out at the edges */
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.logo-bar__track {
+  display: flex;
+  width: max-content;
+  animation: logo-scroll 40s linear infinite;
+}
+
+.logo-bar__viewport:hover .logo-bar__track {
+  animation-play-state: paused;
+}
+
+.logo-bar__list {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  margin: 0;
+  padding: 0 32px;
+  list-style: none;
+}
+
+/* Logo files have large white margins, so size them by height
+   and blend the white away on any background */
+.logo-bar__list img {
+  width: auto;
+  height: 72px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+@keyframes logo-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Visitors who turn off motion get a static, wrapping row instead */
+@media (prefers-reduced-motion: reduce) {
+  .logo-bar__viewport {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .logo-bar__track {
+    width: auto;
+  }
+
+  .logo-bar__list {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 24px;
+  }
+
+  .logo-bar__list[aria-hidden="true"] {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .logo-bar__inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .logo-bar__label {
+    text-align: center;
+  }
+
+  .logo-bar__list {
+    gap: 40px;
+    padding: 0 20px;
+  }
+
+  .logo-bar__list img {
+    height: 56px;
   }
 }
