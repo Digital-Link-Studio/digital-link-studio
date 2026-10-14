@@ -13,6 +13,12 @@
    11. The process
    12. Proof in numbers
    13. Testimonials
+   14. Capabilities
+   15. Who this is for
+   16. Partner network
+   17. Growth Snapshot offer
+   18. FAQ
+   19. Footer
    ========================================================================== */
 
 /* 1. Design tokens
@@ -73,6 +79,11 @@ svg {
 
 a {
   color: inherit;
+}
+
+/* Playfair defaults to old style figures; keep numbers level everywhere */
+h1, h2, h3, strong {
+  font-variant-numeric: lining-nums;
 }
 
 :focus-visible {
@@ -917,4 +928,310 @@ a {
   .quote-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* 14. Capabilities
+   ========================================================================== */
+.capabilities {
+  background: var(--color-cream);
+}
+
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(16px, 2vw, 24px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.capability {
+  padding: 28px 24px;
+  background: var(--color-white);
+  border-radius: 16px;
+}
+
+.capability__icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 20px;
+  fill: none;
+  stroke: var(--color-copper);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.capability__title {
+  margin: 0 0 10px;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.capability__text {
+  margin: 0;
+  font-size: 0.975rem;
+  line-height: 1.6;
+  color: var(--color-ink-soft);
+}
+
+@media (max-width: 1080px) {
+  .capability-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .capability-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 15. Who this is for
+   ========================================================================== */
+.fit__inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(40px, 6vw, 96px);
+  align-items: center;
+}
+
+.fit__text p {
+  margin: 0 0 18px;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--color-ink-soft);
+}
+
+.fit__text p:last-child {
+  margin-bottom: 0;
+}
+
+.fit__media {
+  position: relative;
+  margin: 0;
+}
+
+.fit__media img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-card);
+}
+
+.fit__badge {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  padding: 10px 18px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--color-white);
+  border-radius: var(--radius-pill);
+}
+
+@media (max-width: 860px) {
+  .fit__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .fit__media {
+    max-width: 460px;
+  }
+}
+
+/* 16. Partner network
+   ========================================================================== */
+.partners {
+  padding-top: 0;
+}
+
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2vw, 24px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.partner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  padding: 24px;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+}
+
+@media (max-width: 760px) {
+  .partner-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .partner {
+    min-height: 88px;
+  }
+}
+
+/* 17. Growth Snapshot offer
+   ========================================================================== */
+.offer {
+  text-align: center;
+  background: var(--color-ink);
+  color: var(--color-cream);
+  scroll-margin-top: var(--header-height);
+}
+
+.offer__label {
+  color: var(--color-peach);
+}
+
+.offer__title {
+  margin: 0 0 24px;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.offer__text p {
+  margin: 0 auto 18px;
+  max-width: 680px;
+  font-size: clamp(1.0625rem, 1.4vw, 1.2rem);
+  line-height: 1.65;
+  color: rgba(246, 241, 236, 0.82);
+}
+
+.offer__price {
+  margin: 28px 0 32px;
+  font-size: 1.125rem;
+}
+
+.offer__price strong {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 500;
+  font-variant-numeric: lining-nums;
+  color: var(--color-peach);
+}
+
+/* 18. FAQ
+   ========================================================================== */
+.faq__header {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.faq__list {
+  border-top: 1px solid var(--color-line);
+}
+
+.faq__item {
+  border-bottom: 1px solid var(--color-line);
+}
+
+.faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq__question::-webkit-details-marker {
+  display: none;
+}
+
+.faq__question h3 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+  line-height: 1.3;
+}
+
+/* Plus sign that turns into a minus when open */
+.faq__question::after {
+  content: "";
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  background:
+    linear-gradient(var(--color-copper), var(--color-copper)) center / 16px 2px no-repeat,
+    linear-gradient(var(--color-copper), var(--color-copper)) center / 2px 16px no-repeat;
+  transition: transform 0.2s ease;
+}
+
+.faq__item[open] .faq__question::after {
+  background:
+    linear-gradient(var(--color-copper), var(--color-copper)) center / 16px 2px no-repeat;
+}
+
+.faq__answer p {
+  margin: 0;
+  padding: 0 40px 28px 0;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--color-ink-soft);
+}
+
+/* 19. Footer
+   ========================================================================== */
+.site-footer {
+  padding: clamp(48px, 6vw, 72px) var(--page-gutter) 32px;
+  background: var(--color-cream);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px 48px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.site-footer__tagline {
+  margin: 10px 0 0;
+  max-width: 340px;
+  color: var(--color-ink-soft);
+}
+
+.site-footer__nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer__nav a {
+  display: inline-block;
+  padding: 10px 0;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.site-footer__nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.site-footer__bottom p {
+  margin: 24px 0 0;
+  font-size: 0.875rem;
+  color: var(--color-ink-soft);
 }
