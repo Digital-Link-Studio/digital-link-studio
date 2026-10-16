@@ -35,6 +35,8 @@
   --color-copper: #9A5530;       /* text links, 5:1 contrast on cream */
   --color-accent: #E89A62;       /* small decorative accents only */
   --color-line: #E7E2DC;
+  --color-field-border: #857A70; /* form field borders, 4.2:1 on white */
+  --color-error: #A3341F;        /* form error text, 6.8:1 on white */
 
   /* Type */
   --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
@@ -139,6 +141,8 @@ h1, h2, h3, strong {
   font-family: var(--font-sans);
   font-weight: 600;
   font-size: 1.125rem;
+  /* Removes the browser's default border when .btn is a <button> */
+  border: 0;
   /* Long labels wrap on narrow screens instead of overflowing their container */
   max-width: 100%;
   text-align: center;
@@ -2053,5 +2057,118 @@ html:not(.js) .site-nav__item:is(:hover, :focus-within) > .site-nav__sub {
   .compare th,
   .compare td {
     padding: 14px 16px;
+  }
+}
+
+/* 22. Contact form
+   ========================================================================== */
+.contact-form {
+  display: grid;
+  gap: 24px;
+  max-width: 640px;
+}
+
+.contact-form__intro {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--color-ink-soft);
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field__label {
+  font-weight: 600;
+  font-size: 1.0625rem;
+}
+
+.field__optional {
+  font-weight: 400;
+  color: var(--color-ink-soft);
+}
+
+.field__hint {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--color-ink-soft);
+}
+
+/* At least 16px text so iOS does not zoom in, and a 48px tap target */
+.field__input {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--color-ink);
+  background: var(--color-white);
+  border: 1px solid var(--color-field-border);
+  border-radius: 10px;
+}
+
+.field__input--textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+/* Fields flagged only after the person has interacted with them */
+.field__input:user-invalid {
+  border-color: var(--color-error);
+  border-width: 2px;
+}
+
+.contact-form__trap {
+  display: none;
+}
+
+.contact-form__submit {
+  justify-self: start;
+}
+
+.contact-form__submit[aria-disabled="true"] {
+  cursor: progress;
+  opacity: 0.7;
+}
+
+.contact-form__status {
+  margin: 0;
+  font-size: 1.0625rem;
+}
+
+.contact-form__status:empty {
+  display: none;
+}
+
+.contact-form__status--error {
+  color: var(--color-error);
+  font-weight: 500;
+}
+
+/* Shown in place of the form once a message is sent */
+.contact-sent {
+  max-width: 640px;
+  padding: clamp(24px, 3vw, 32px);
+  background: var(--color-cream);
+  border-radius: var(--radius-card);
+}
+
+.contact-sent__title {
+  margin: 0 0 8px;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(1.375rem, 2vw, 1.625rem);
+}
+
+.contact-sent__text {
+  margin: 0;
+  font-size: 1.0625rem;
+  color: var(--color-ink-soft);
+}
+
+@media (pointer: coarse) {
+  .field__input {
+    min-height: 52px;
   }
 }
