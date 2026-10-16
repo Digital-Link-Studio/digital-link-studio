@@ -41,7 +41,14 @@ Standing instructions for anyone working on this project, including AI coding as
 ## Change management
 
 - The default branch is currently `claude/determined-ptolemy-oigpdw`. Do not rename branches or change the default branch without the owner's explicit instruction.
-- Direct commits and merges into the default branch are allowed. If the environment requires a session branch, work there and merge completed work into the default branch without asking which branch to use.
+- Direct commits and merges into the default branch are allowed for changes to existing pages. If the environment requires a session branch, work there and merge completed work into the default branch without asking which branch to use. New pages follow the workflow below instead.
 - Keep commits focused and preserve existing work.
 - Never commit secrets or credentials.
 - Production deployment and hosting changes still require the owner's explicit instruction.
+
+## New pages
+
+- Do not build a page's content until the owner provides approved copy. Shared structure such as navigation may be prepared first.
+- Start each new page from the latest default branch on its own branch named `page/<page-name>`, for example `page/growth-snapshot`. If the environment requires a session branch instead, use it and first confirm it includes the latest default branch changes.
+- Keep all work for the page on that branch until it is ready. Commit and push progress without asking each time.
+- When the page is ready, open a pull request into the default branch. Wait for the owner's instruction before merging.
