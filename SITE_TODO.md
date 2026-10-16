@@ -14,7 +14,9 @@ Testing so far used headless Chromium on `index.html` only. "Enlarged text" mean
 - [ ] **Unfinished links.**
   - `contact.html` (main nav, footer, and the "Book your Growth Snapshot" button) does not exist.
   - `#growth-checklist` (hero, "Get the growth checklist") has no matching target.
-  - The "How we help" pages are linked from the main nav and footer but not built yet: `growth-snapshot.html`, `growth-audit.html`, `growth-programs.html`, `growth-partnership.html`.
+  - Three "How we help" pages are linked from the main nav and footer but not built yet: `growth-audit.html`, `growth-programs.html`, `growth-partnership.html`.
+  - Growth Snapshot booking: every "Book your Growth Snapshot" and "Book a Growth Snapshot" button on `growth-snapshot.html` points to `contact.html` as a placeholder until a booking link is provided.
+  - "Explore ways to work together" on `growth-snapshot.html` points to the homepage as a placeholder. Its three cards are not linked to their pages yet.
   - The header and footer "Book a Growth Snapshot" buttons link to `#growth-snapshot`, which only exists on the homepage. On any other page they will go nowhere.
 - [ ] **Header button wraps at the desktop breakpoint.** At 861px with text spacing, "Book a Growth Snapshot" in the header wraps to three lines. It stays readable and nothing overlaps.
 

@@ -1362,3 +1362,169 @@ html:not(.js) .site-nav__item:is(:hover, :focus-within) > .site-nav__sub {
   font-size: 0.875rem;
   color: var(--color-ink-soft);
 }
+
+/* 20. Inner pages (first used by the Growth Snapshot page)
+   ========================================================================== */
+
+/* Marks "How we help" when the current page is one of its links */
+.site-nav__item:has(.site-nav__sublink[aria-current="page"]) > .site-nav__trigger {
+  background: #F3F2F0;
+}
+
+.site-footer__nav a[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.section--cream {
+  background: var(--color-cream);
+}
+
+/* Hero sized to its content, in the same cream card as the homepage hero */
+.page-hero {
+  padding: 0 var(--page-gutter);
+}
+
+.page-hero__card {
+  padding: clamp(56px, 8vw, 104px) clamp(24px, 4vw, 48px);
+  background: var(--color-cream);
+  border-radius: 0 0 var(--radius-card) var(--radius-card);
+}
+
+.page-hero__content {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.page-hero__title {
+  max-width: 900px;
+  margin: 0 0 28px;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.page-hero__text {
+  max-width: 680px;
+}
+
+.page-hero__text p {
+  margin: 0 0 16px;
+  font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+  line-height: 1.65;
+  color: var(--color-ink-soft);
+  text-wrap: pretty;
+}
+
+.page-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 28px;
+}
+
+.page-hero__note {
+  max-width: 380px;
+  margin: 0;
+  font-size: 1rem;
+  color: var(--color-ink-soft);
+}
+
+/* Short facts separated by middle dots, such as "60 minutes · $149" */
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 6px;
+  margin: 32px 0 28px;
+  padding: 0;
+  list-style: none;
+  font-weight: 600;
+}
+
+.facts li + li::before {
+  /* The second value hides the dot from screen readers where supported */
+  content: "·";
+  content: "·" / "";
+  margin: 0 12px;
+  color: var(--color-copper);
+}
+
+.facts--on-dark {
+  justify-content: center;
+  font-size: 1.125rem;
+  color: var(--color-cream);
+}
+
+.facts--on-dark li + li::before {
+  color: var(--color-peach);
+}
+
+.card-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.section-note {
+  max-width: 760px;
+  margin: clamp(28px, 3vw, 40px) 0 0;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-ink-soft);
+}
+
+/* Numbered steps without an output column */
+.step--simple {
+  grid-template-columns: 96px minmax(0, 760px);
+}
+
+.fit__text .fit__closing {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 1.8vw, 1.45rem);
+  line-height: 1.4;
+  color: var(--color-ink);
+}
+
+.offer__title--long {
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-wrap: balance;
+}
+
+.next-steps__cta {
+  margin-top: clamp(32px, 4vw, 48px);
+}
+
+@media (max-width: 960px) {
+  .card-grid--3 {
+    grid-template-columns: 1fr;
+  }
+
+  .step--simple {
+    grid-template-columns: 64px 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .step--simple {
+    grid-template-columns: 1fr;
+  }
+
+  /* Stacked, so no line starts with a stray dot */
+  .facts {
+    flex-direction: column;
+  }
+
+  .facts--on-dark {
+    align-items: center;
+  }
+
+  .facts li + li::before {
+    content: none;
+  }
+
+  /* Side padding eases so the label keeps to one line where it can */
+  .page-hero__actions .btn--primary {
+    padding-inline: clamp(16px, 5vw, 30px);
+  }
+}
