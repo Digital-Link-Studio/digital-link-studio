@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Digital Link Studio</title>
+  <meta name="description" content="Questions about working with Digital Link Studio? Send Shanda a message.">
+
+  <!-- Open Graph (link previews on social and messaging apps) -->
+  <meta property="og:title" content="Contact | Digital Link Studio">
+  <meta property="og:description" content="Questions about working with Digital Link Studio? Send Shanda a message.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+      <a class="logo" href="index.html">Digital Link Studio</a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="index.html">Home</a></li>
+          <li class="site-nav__item">
+            <button class="site-nav__link site-nav__trigger" type="button" aria-controls="nav-how-we-help">
+              How we help
+              <svg class="site-nav__chevron" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <path d="M4 6 L8 10 L12 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul class="site-nav__sub" id="nav-how-we-help">
+              <li><a class="site-nav__sublink" href="growth-snapshot.html">Live Growth Snapshot</a></li>
+              <li><a class="site-nav__sublink" href="growth-audit.html">Growth Audit &amp; Roadmap</a></li>
+              <li><a class="site-nav__sublink" href="growth-programs.html">Projects &amp; Growth Programs</a></li>
+              <li><a class="site-nav__sublink" href="growth-partnership.html">Ongoing Growth Partnership</a></li>
+            </ul>
+          </li>
+          <li><a class="site-nav__link" href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn--primary btn--small site-header__cta" href="https://calendly.com/shanda-digitallink/live-growth-snapshot">Book a Live Growth Snapshot</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== Hero ===== -->
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="page-hero__card">
+        <div class="page-hero__content">
+          <h1 class="page-hero__title" id="page-title">Contact</h1>
+          <div class="page-hero__text">
+            <p>Questions about working together? Send a message and Shanda will reply by email.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact form ===== -->
+    <section class="section" aria-label="Contact form">
+      <div class="container">
+        <!-- Messages are delivered by Formspree. Replace FORM_ID with the form's ID from formspree.io. -->
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/FORM_ID" method="post">
+          <p class="contact-form__intro">All fields are required unless marked optional.</p>
+
+          <div class="field">
+            <label class="field__label" for="contact-name">Name</label>
+            <input class="field__input" type="text" id="contact-name" name="name" autocomplete="name" required>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="contact-email">Email</label>
+            <input class="field__input" type="email" id="contact-email" name="email" autocomplete="email" required>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="contact-business">Business</label>
+            <input class="field__input" type="text" id="contact-business" name="business" autocomplete="organization" required>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="contact-website">Business website <span class="field__optional">(optional)</span></label>
+            <input class="field__input" type="text" inputmode="url" id="contact-website" name="website" autocomplete="url" autocapitalize="off" spellcheck="false" aria-describedby="contact-website-hint">
+            <p class="field__hint" id="contact-website-hint">For example, yourbusiness.com</p>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="contact-questions">What questions do you have?</label>
+            <textarea class="field__input field__input--textarea" id="contact-questions" name="questions" rows="6" required></textarea>
+          </div>
+
+          <!-- Spam trap: people never see or fill this field, so Formspree drops submissions that do -->
+          <div class="contact-form__trap" aria-hidden="true">
+            <label for="contact-gotcha">Leave this field empty</label>
+            <input type="text" id="contact-gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+          <input type="hidden" name="_subject" value="New message from the Digital Link Studio website">
+
+          <button class="btn btn--primary contact-form__submit" type="submit">Send message</button>
+
+          <p class="contact-form__status" id="contact-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <a class="logo" href="index.html">Digital Link Studio</a>
+        <p class="site-footer__tagline">Product owner thinking. CMO leadership. Real growth, owned end to end.</p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Footer">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="growth-snapshot.html">Live Growth Snapshot</a></li>
+          <li><a href="growth-audit.html">Growth Audit &amp; Roadmap</a></li>
+          <li><a href="growth-programs.html">Projects &amp; Growth Programs</a></li>
+          <li><a href="growth-partnership.html">Ongoing Growth Partnership</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn--primary btn--small" href="https://calendly.com/shanda-digitallink/live-growth-snapshot">Book a Live Growth Snapshot</a>
+    </div>
+    <div class="container site-footer__bottom">
+      <p>&copy; 2026 Digital Link Studio</p>
+    </div>
+  </footer>
+</body>
+</html>
