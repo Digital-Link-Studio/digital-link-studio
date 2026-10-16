@@ -14,11 +14,15 @@ Testing so far used headless Chromium on `index.html` only. "Enlarged text" mean
 - [ ] **Unfinished links.**
   - `contact.html` (main nav, footer, and the "Book your Growth Snapshot" button) does not exist.
   - `#growth-checklist` (hero, "Get the growth checklist") has no matching target.
-  - Three "How we help" pages are linked from the main nav and footer but not built yet: `growth-audit.html`, `growth-programs.html`, `growth-partnership.html`.
+  - Two "How we help" pages are linked from the main nav and footer but not built yet: `growth-audit.html`, `growth-programs.html`.
+  - "Book a Live Growth Consultation" on `growth-partnership.html` points to `contact.html` as a placeholder. It is not yet decided whether this is the same booking as the Growth Snapshot.
   - Growth Snapshot booking: every "Book your Growth Snapshot" and "Book a Growth Snapshot" button on `growth-snapshot.html` points to `contact.html` as a placeholder until a booking link is provided.
   - "Explore ways to work together" on `growth-snapshot.html` points to the homepage as a placeholder. Its three cards are not linked to their pages yet.
   - The header and footer "Book a Growth Snapshot" buttons link to `#growth-snapshot`, which only exists on the homepage. On any other page they will go nowhere.
 - [ ] **Header button wraps at the desktop breakpoint.** At 861px with text spacing, "Book a Growth Snapshot" in the header wraps to three lines. It stays readable and nothing overlaps.
+
+- [ ] **Team photos missing on the Growth Partnership page.** Only Shanda's photo exists. The other five team cards show no photo until photos are provided.
+- [ ] **Hours split bars are read from the design.** The bars on `growth-partnership.html` show about 80/20, 60/40 and 35/65 strategy to execution, measured from the PDF. Screen readers announce these percentages, so they need the owner's confirmation.
 
 ## Untested concerns
 
