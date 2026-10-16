@@ -12,9 +12,10 @@ Testing so far used headless Chromium on `index.html` only. "Enlarged text" mean
 - [ ] **Logo bar animation has no pause control.** The client logo bar scrolls continuously (40s loop). It pauses on mouse hover only, so keyboard and touch users cannot stop it (WCAG 2.2.2). It does stop when reduced motion is requested.
 - [ ] **Focus ring contrast on dark and peach backgrounds.** The copper focus outline (#9A5530) measures 5.65:1 on white, 5.04:1 on cream and 4.23:1 on the pill color, but 2.73:1 on ink (#2B231C) and 2.97:1 on peach (#DDB497), below the 3:1 needed for WCAG 1.4.11.
 - [ ] **Unfinished links.**
-  - `services.html` (main nav, footer) does not exist.
-  - `contact.html` (main nav, footer, `index.html` line 523) does not exist.
-  - `#growth-checklist` (hero, `index.html` line 121) has no matching target.
+  - `contact.html` (main nav, footer, and the "Book your Growth Snapshot" button) does not exist.
+  - The "How we help" pages are linked from the main nav and footer but not built yet: `growth-snapshot.html`, `growth-audit.html`, `growth-programs.html`, `growth-partnership.html`.
+  - The header and footer "Book a Growth Snapshot" buttons link to `#growth-snapshot`, which only exists on the homepage. On any other page they will go nowhere.
+- [ ] **Header button wraps at the desktop breakpoint.** At 861px with text spacing, "Book a Growth Snapshot" in the header wraps to three lines. It stays readable and nothing overlaps.
 
 ## Untested concerns
 

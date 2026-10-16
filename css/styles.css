@@ -252,6 +252,81 @@ h1, h2, h3, strong {
   background: #F3F2F0;
 }
 
+/* "How we help" disclosure: a button that shows and hides a list of links */
+.site-nav__item {
+  position: relative;
+}
+
+.site-nav__trigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  font-family: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.site-nav__chevron {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+}
+
+.site-nav__trigger[aria-expanded="true"] .site-nav__chevron {
+  transform: rotate(180deg);
+}
+
+.site-nav__sub {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 60;
+  min-width: 280px;
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(43, 35, 28, 0.08);
+}
+
+/* Bridges the gap above the list so hovering down to it keeps it open */
+.site-nav__sub::before {
+  content: "";
+  position: absolute;
+  inset: -9px 0 auto;
+  height: 9px;
+}
+
+.site-nav__trigger[aria-expanded="true"] + .site-nav__sub {
+  display: block;
+}
+
+/* Without JavaScript the list opens on hover and keyboard focus instead */
+html:not(.js) .site-nav__item:is(:hover, :focus-within) > .site-nav__sub {
+  display: block;
+}
+
+.site-nav__sublink {
+  display: block;
+  padding: 12px 14px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.site-nav__sublink:hover,
+.site-nav__sublink[aria-current="page"] {
+  background: #F3F2F0;
+}
+
 .site-header__cta {
   margin-left: auto;
 }
@@ -339,6 +414,30 @@ h1, h2, h3, strong {
   .site-nav__link {
     padding: 14px 12px;
     font-size: 1.25rem;
+  }
+
+  .site-nav__trigger {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* In the mobile menu the list expands in place under its button */
+  .site-nav__sub {
+    position: static;
+    min-width: 0;
+    padding: 0 0 8px 12px;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .site-nav__sub::before {
+    content: none;
+  }
+
+  .site-nav__sublink {
+    padding: 12px;
+    font-size: 1.125rem;
   }
 }
 
