@@ -2257,3 +2257,51 @@ html:not(.js) .site-nav__item:is(:hover, :focus-within) > .site-nav__sub {
     grid-template-columns: 1fr;
   }
 }
+
+/* 24. Growth Programs page
+   ========================================================================== */
+
+/* Steps with more than one paragraph, or a list, in their body */
+.step__body > * + * {
+  margin-top: 12px;
+}
+
+.step__body > .step__title + * {
+  margin-top: 0;
+}
+
+/* Checklist, matching the review area lists */
+.check-list {
+  display: grid;
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.check-list li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+}
+
+.check-list li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.3em;
+  width: 6px;
+  height: 12px;
+  border-right: 2px solid var(--color-copper);
+  border-bottom: 2px solid var(--color-copper);
+  transform: rotate(45deg);
+}
+
+/* Hero and closing buttons on pages without a facts line above them */
+.page-hero__actions--spaced {
+  margin-top: 28px;
+}
+
+.offer__button {
+  margin-top: 14px;
+}
