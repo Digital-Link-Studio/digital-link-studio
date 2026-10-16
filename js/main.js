@@ -68,3 +68,48 @@ document.documentElement.classList.add('js');
     });
   });
 })();
+
+// Contact form: sends without leaving the page when scripts run.
+// Without scripts the form posts to Formspree as a normal form.
+(function () {
+  const form = document.getElementById('contact-form');
+  if (!form || !window.fetch) return;
+
+  const status = document.getElementById('contact-status');
+  const button = form.querySelector('[type="submit"]');
+  let sending = false;
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    if (sending) return;
+
+    sending = true;
+    button.setAttribute('aria-disabled', 'true');
+    status.className = 'contact-form__status';
+    status.textContent = 'Sending your message…';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' }
+    })
+      .then(function (response) {
+        if (!response.ok) throw new Error('Request failed');
+
+        const sent = document.createElement('div');
+        sent.className = 'contact-sent';
+        sent.setAttribute('tabindex', '-1');
+        sent.innerHTML =
+          '<h2 class="contact-sent__title">Thank you, your message is on its way.</h2>' +
+          '<p class="contact-sent__text">Shanda will reply to the email address you gave.</p>';
+        form.replaceWith(sent);
+        sent.focus();
+      })
+      .catch(function () {
+        sending = false;
+        button.removeAttribute('aria-disabled');
+        status.className = 'contact-form__status contact-form__status--error';
+        status.textContent = 'Your message did not send. Please try again, or email shanda@digitallink.studio.';
+      });
+  });
+})();
