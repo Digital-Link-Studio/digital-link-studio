@@ -217,7 +217,8 @@ h1, h2, h3, strong {
   display: flex;
   align-items: center;
   gap: 36px;
-  height: var(--header-height);
+  /* Grows if enlarged text wraps the logo, instead of clipping it */
+  min-height: var(--header-height);
   padding: 0 var(--page-gutter);
 }
 
@@ -258,6 +259,8 @@ h1, h2, h3, strong {
 /* Hamburger, shown on small screens only */
 .nav-toggle {
   display: none;
+  /* Holds its 44px size when a wider logo crowds the header */
+  flex: none;
   flex-direction: column;
   justify-content: center;
   gap: 6px;
@@ -305,6 +308,8 @@ h1, h2, h3, strong {
 
   .logo {
     font-size: 1.5rem;
+    /* Wraps instead of overflowing if wider text spacing leaves no room */
+    white-space: normal;
   }
 
   .site-header__cta {
