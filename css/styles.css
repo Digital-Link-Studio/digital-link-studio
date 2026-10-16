@@ -473,14 +473,14 @@ h1, h2, h3, strong {
 
   .hero__actions {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .hero__actions .btn--primary {
     min-height: 64px;
     /* Side padding eases on small phones so the label keeps to one line where it can */
-    padding: 16px clamp(20px, 8vw, 40px);
-    font-size: 1.2rem;
+    padding: 16px clamp(16px, 5vw, 40px);
+    font-size: 1.125rem;
   }
 
   .proof {
@@ -1071,40 +1071,217 @@ h1, h2, h3, strong {
   }
 }
 
-/* 16. Partner network
+/* 16. Growth Partnership levels
    ========================================================================== */
-.partners {
-  padding-top: 0;
+.pricing {
+  background: var(--color-cream);
 }
 
-.partner-grid {
+/* Each card spans four shared rows (head, name, cost, text) through subgrid,
+   so prices and descriptions line up even when a name wraps. */
+.tier-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(16px, 2vw, 24px);
+  column-gap: clamp(16px, 2vw, 24px);
+  row-gap: 0;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.partner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 120px;
-  padding: 24px;
-  font-family: var(--font-serif);
-  font-size: 1.5rem;
+.tier {
+  display: grid;
+  grid-row: span 4;
+  grid-template-rows: subgrid;
+  row-gap: 16px;
+  align-content: start;
+  padding: clamp(28px, 3vw, 36px);
+  background: var(--color-white);
   border: 1px solid var(--color-line);
   border-radius: var(--radius-card);
 }
 
-@media (max-width: 760px) {
-  .partner-grid {
+.tier__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 12px;
+}
+
+.tier__label {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-copper);
+}
+
+.tier__badge {
+  margin: 0;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  background: var(--color-peach);
+  border-radius: var(--radius-pill);
+}
+
+.tier__name {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(1.375rem, 2vw, 1.625rem);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.tier__price {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(2.25rem, 3.2vw, 2.75rem);
+  line-height: 1.1;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.tier__from {
+  margin-right: 4px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--color-ink-soft);
+}
+
+.tier--featured .tier__from {
+  color: rgba(246, 241, 236, 0.82);
+}
+
+.tier__period {
+  margin-left: 4px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--color-ink-soft);
+}
+
+.tier__hours {
+  margin: 6px 0 0;
+  font-size: 0.975rem;
+  color: var(--color-ink-soft);
+}
+
+.tier__text {
+  margin: 4px 0 0;
+  padding-top: 20px;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-ink-soft);
+  border-top: 1px solid var(--color-line);
+}
+
+/* The featured level reuses the dark palette of the offer section */
+.tier--featured {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+  color: var(--color-cream);
+}
+
+.tier--featured .tier__label {
+  color: var(--color-peach);
+}
+
+.tier--featured .tier__period,
+.tier--featured .tier__hours,
+.tier--featured .tier__text {
+  color: rgba(246, 241, 236, 0.82);
+}
+
+.tier--featured .tier__text {
+  border-top-color: rgba(221, 180, 151, 0.4);
+}
+
+.included {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24px clamp(32px, 4vw, 64px);
+  margin-top: clamp(48px, 6vw, 72px);
+  padding-top: clamp(32px, 4vw, 48px);
+  border-top: 1px solid var(--color-line);
+}
+
+.included__title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(1.375rem, 2vw, 1.625rem);
+  line-height: 1.25;
+}
+
+.included__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.included__list li {
+  position: relative;
+  padding-left: 30px;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-ink-soft);
+}
+
+/* Decorative check mark drawn with borders */
+.included__list li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.35em;
+  width: 7px;
+  height: 13px;
+  border-right: 2px solid var(--color-copper);
+  border-bottom: 2px solid var(--color-copper);
+  transform: rotate(45deg);
+}
+
+.pricing__cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 28px;
+  margin-top: clamp(40px, 5vw, 56px);
+}
+
+.pricing__note {
+  margin: 0;
+  font-size: 1.0625rem;
+  color: var(--color-ink-soft);
+}
+
+@media (max-width: 960px) {
+  .tier-grid {
     grid-template-columns: 1fr;
+    row-gap: 20px;
+    max-width: 560px;
   }
 
-  .partner {
-    min-height: 88px;
+  .tier {
+    grid-row: auto;
+    grid-template-rows: none;
+  }
+
+  .included {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .included__list {
+    grid-template-columns: 1fr;
   }
 }
 
