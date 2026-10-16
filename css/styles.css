@@ -139,8 +139,10 @@ h1, h2, h3, strong {
   font-family: var(--font-sans);
   font-weight: 600;
   font-size: 1.125rem;
+  /* Long labels wrap on narrow screens instead of overflowing their container */
+  max-width: 100%;
+  text-align: center;
   text-decoration: none;
-  white-space: nowrap;
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
@@ -170,6 +172,24 @@ h1, h2, h3, strong {
   min-height: 44px;
   padding: 0 4px;
   color: var(--color-copper);
+}
+
+/* On small screens the label can wrap. Inline text flow keeps the arrow
+   beside the last word instead of pushing it to the far edge. */
+@media (max-width: 860px) {
+  .btn--link {
+    display: inline-block;
+    padding: 10px 4px;
+    line-height: 24px;
+    /* Even line lengths, so the arrow is not left alone on the last line */
+    text-wrap: balance;
+  }
+
+  .btn--link .btn__arrow {
+    display: inline-block;
+    margin-left: 2px;
+    vertical-align: -2px;
+  }
 }
 
 .btn--link:hover {
@@ -347,6 +367,8 @@ h1, h2, h3, strong {
 .hero__content {
   position: relative;
   z-index: 1;
+  /* As a flex item it would otherwise refuse to shrink below its widest line */
+  min-width: 0;
   max-width: 900px;
   text-align: center;
 }
@@ -451,7 +473,8 @@ h1, h2, h3, strong {
 
   .hero__actions .btn--primary {
     min-height: 64px;
-    padding: 16px 40px;
+    /* Side padding eases on small phones so the label keeps to one line where it can */
+    padding: 16px clamp(20px, 8vw, 40px);
     font-size: 1.2rem;
   }
 
