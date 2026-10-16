@@ -479,8 +479,8 @@ h1, h2, h3, strong {
   .hero__actions .btn--primary {
     min-height: 64px;
     /* Side padding eases on small phones so the label keeps to one line where it can */
-    padding: 16px clamp(20px, 8vw, 40px);
-    font-size: 1.2rem;
+    padding: 16px clamp(16px, 5vw, 40px);
+    font-size: 1.125rem;
   }
 
   .proof {
