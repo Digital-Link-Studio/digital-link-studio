@@ -13,11 +13,14 @@ Testing so far used headless Chromium on `index.html` only. "Enlarged text" mean
 - [ ] **Focus ring contrast on dark and peach backgrounds.** The copper focus outline (#9A5530) measures 5.65:1 on white, 5.04:1 on cream and 4.23:1 on the pill color, but 2.73:1 on ink (#2B231C) and 2.97:1 on peach (#DDB497), below the 3:1 needed for WCAG 1.4.11.
 - [ ] **Unfinished links.**
   - `contact.html` (main nav, footer, and the "Book your Live Growth Snapshot" button) does not exist.
-  - Three "How we help" pages are linked from the main nav and footer but not built yet: `growth-audit.html`, `growth-programs.html`, `growth-partnership.html`.
+  - Two "How we help" pages are linked from the main nav and footer but not built yet: `growth-audit.html`, `growth-programs.html`.
   - Live Growth Snapshot booking: every "Book your Live Growth Snapshot" and "Book a Live Growth Snapshot" button on `growth-snapshot.html` points to `contact.html` as a placeholder until a booking link is provided.
   - "Explore ways to work together" on `growth-snapshot.html` points to the homepage as a placeholder. Its three cards are not linked to their pages yet.
   - The header and footer "Book a Live Growth Snapshot" buttons link to `#growth-snapshot`, which only exists on the homepage. On any other page they will go nowhere.
 - [ ] **Longer button labels wrap.** Since the rename, "Book a Live Growth Snapshot" in the header wraps to two lines at 861px (three with text spacing), and "Book your Live Growth Snapshot" in the Live Growth Snapshot page hero wraps to two lines at 375px. Both stay readable and nothing overlaps. A shorter header label or a later mobile breakpoint would avoid it.
+
+- [ ] **Team photos missing on the Growth Partnership page.** Only Shanda's photo exists. The other five team cards show no photo until photos are provided.
+- [ ] **Hours split bars are read from the design.** The bars on `growth-partnership.html` show about 80/20, 60/40 and 35/65 strategy to execution, measured from the PDF. Screen readers announce these percentages, so they need the owner's confirmation.
 
 ## Untested concerns
 
