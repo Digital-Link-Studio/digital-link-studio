@@ -14,7 +14,6 @@ Testing so far used headless Chromium on `index.html` only. "Enlarged text" mean
 - [ ] **Unfinished links.**
   - `services.html` (main nav, footer) does not exist.
   - `contact.html` (main nav, footer, `index.html` line 523) does not exist.
-  - `#growth-checklist` (hero, `index.html` line 121) has no matching target.
 
 ## Untested concerns
 
