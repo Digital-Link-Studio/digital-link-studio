@@ -13,7 +13,7 @@ Testing so far used headless Chromium on `index.html` only. "Enlarged text" mean
 - [ ] **Focus ring contrast on dark and peach backgrounds.** The copper focus outline (#9A5530) measures 5.65:1 on white, 5.04:1 on cream and 4.23:1 on the pill color, but 2.73:1 on ink (#2B231C) and 2.97:1 on peach (#DDB497), below the 3:1 needed for WCAG 1.4.11.
 - [ ] **Unfinished links.**
   - `services.html` (main nav, footer) does not exist.
-  - `contact.html` (main nav, footer, `index.html` line 523) does not exist.
+  - `contact.html` (main nav, footer, and the "Book your Growth Snapshot" button) does not exist.
 
 ## Untested concerns
 
