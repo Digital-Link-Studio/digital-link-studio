@@ -36,10 +36,12 @@ Standing instructions for anyone working on this project, including AI coding as
 - After relevant changes, check desktop and mobile layouts, keyboard interactions, links and browser console errors.
 - Use the existing tools for appropriate checks.
 - Explain what was tested and what remains untested.
-- Flag existing issues outside the requested scope without silently expanding the task.
+- Track existing issues outside the requested scope in `SITE_TODO.md`, then continue the requested task unless they prevent it from working. Do not silently expand the task.
 
 ## Change management
 
-- Keep changes focused and preserve existing work.
+- The default branch is currently `claude/determined-ptolemy-oigpdw`. Do not rename branches or change the default branch without the owner's explicit instruction.
+- Direct commits and merges into the default branch are allowed. If the environment requires a session branch, work there and merge completed work into the default branch without asking which branch to use.
+- Keep commits focused and preserve existing work.
 - Never commit secrets or credentials.
-- Do not merge into the default branch or deploy to production without the owner's explicit instruction.
+- Production deployment and hosting changes still require the owner's explicit instruction.
