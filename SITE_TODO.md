@@ -12,8 +12,8 @@ Testing so far used headless Chromium on `index.html` only. "Enlarged text" mean
 - [ ] **Logo bar animation has no pause control.** The client logo bar scrolls continuously (40s loop). It pauses on mouse hover only, so keyboard and touch users cannot stop it (WCAG 2.2.2). It does stop when reduced motion is requested.
 - [ ] **Focus ring contrast on dark and peach backgrounds.** The copper focus outline (#9A5530) measures 5.65:1 on white, 5.04:1 on cream and 4.23:1 on the pill color, but 2.73:1 on ink (#2B231C) and 2.97:1 on peach (#DDB497), below the 3:1 needed for WCAG 1.4.11.
 - [ ] **Unfinished links.**
-  - Two "How we help" pages are linked from the main nav and footer but not built yet: `growth-audit.html`, `growth-programs.html`.
-  - "Explore ways to work together" on `growth-snapshot.html` points to the homepage as a placeholder. Its three cards are not linked to their pages yet.
+  - One "How we help" page is linked from the main nav and footer but not built yet: `growth-programs.html`.
+  - "Explore ways to work together" on `growth-snapshot.html` and `growth-audit.html` points to the homepage as a placeholder. The cards above it are not linked to their pages yet.
 - [ ] **Longer button labels wrap.** Since the rename, "Book a Live Growth Snapshot" in the header wraps to two lines at 861px (three with text spacing), and "Book your Live Growth Snapshot" in the Live Growth Snapshot page hero wraps to two lines at 375px. Both stay readable and nothing overlaps. A shorter header label or a later mobile breakpoint would avoid it.
 
 - [ ] **Team photos missing on the Growth Partnership page.** Only Shanda's photo exists. The other five team cards show no photo until photos are provided.
